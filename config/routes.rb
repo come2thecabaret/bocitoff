@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'items/new'
+
   devise_for :users, controllers: { registrations: 'registrations' }
 
   resources :users, only: [:show] do
