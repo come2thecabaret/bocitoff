@@ -1,0 +1,10 @@
+<%= form_for [@user, Item.new] do |f| %>
+<div class="form-group">
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+<div class="form-group">
+  <%= f.submit "Submit Item" %>
+</div>
+</div>
+<% end %>
