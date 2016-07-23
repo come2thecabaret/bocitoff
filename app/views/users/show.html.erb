@@ -3,7 +3,11 @@
 <div>
   <%= render 'items/form' %>
 </div>
-<h2><%= @user.first_name %>'s Tasks</h2>
-<ul class="list-group">
-  <%= render @items %>
-<ul>
+<% if @user.items.any? %>
+  <h2><%= @user.first_name %>'s Tasks</h2>
+  <ul class="list-group">
+    <%= render @items %>
+  </ul>
+<% else %>
+  <h2><%= @user.first_name %> doesn't have any items!</h2>
+<% end %>
