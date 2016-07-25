@@ -1,5 +1,5 @@
-<li class="list-group-item">
 
-  <%= link_to "", user_item_path(@user.id, item.id), method: :delete, class: 'glyphicon glyphicon-ok' %>
-  <%= item.name %>
-</li>
+  <li class="list-group-item" id="item-<%= item.id %>">
+    <%= link_to "", user_item_path(@user.id, item.id), method: :delete, remote: true, class: 'glyphicon glyphicon-ok' %>
+    <%= item.name %>
+  </li>

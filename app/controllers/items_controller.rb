@@ -16,11 +16,13 @@ class ItemsController < ApplicationController
   def destroy
     @item = Item.find(params[:id])
     if @item.destroy
-        flash[:notice] = "Item removed from To-do list. Way to go!"
-        redirect_to authenticated_root_path
+      flash[:notice] = "Item removed from To-do list. Way to go!"
     else
       flash[:error] = "Error adding item. Please try again."
-      redirect_to authenticated_root_path
+    end
+    respond_to do |format|
+      format.html
+      format.js
     end
   end
 
