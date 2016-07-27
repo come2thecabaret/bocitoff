@@ -1,11 +1,11 @@
 <h1>Hello <%= @user.first_name %> <%= @user.last_name %>!</h1>
 <p>Email address: <%= @user.email %></p>
-<div>
+<div class="new-item">
   <%= render 'items/form' %>
 </div>
 <% if @user.items.any? %>
   <h2><%= @user.first_name %>'s Tasks</h2>
-  <ul class="list-group">
+  <ul class="list-group" id="js-items">
     <%= render @items %>
   </ul>
 <% else %>
