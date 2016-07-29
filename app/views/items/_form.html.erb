@@ -1,4 +1,4 @@
-<%= form_for [@user, Item.new] do |f| %>
+<%= form_for [@user, Item.new], remote: true do |f| %>
 <div>
 
   <%= f.text_field :name, placeholder: "Enter a new item!", autofocus: true %>
