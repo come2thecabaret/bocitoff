@@ -7,10 +7,8 @@ class ItemsController < ApplicationController
   def create
       @item = current_user.items.build(item_params)
       if @item.save
-          redirect_to user_path(current_user)
       else
         flash[:error] = "Error adding item. Please try again."
-        redirect_to user_path(current_user)
       end
   end
 
@@ -21,10 +19,7 @@ class ItemsController < ApplicationController
     else
       flash[:error] = "Error adding item. Please try again."
     end
-    respond_to do |format|
-      format.html
-      format.js
-    end
+
   end
 
   private
